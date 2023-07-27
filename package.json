@@ -1,0 +1,26 @@
+{
+  "name": "e-reo-calculator-hawaiian",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "latest",
+    "expo-asset": "latest",
+    "expo-av": "latest",
+    "expo-status-bar": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-native": "0.71.8",
+    "react-native-web": "~0.18.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "babel-preset-expo": "~9.3.0"
+  },
+  "private": true
+}
