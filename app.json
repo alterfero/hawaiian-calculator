@@ -2,7 +2,7 @@
   "expo": {
     "name": "Helu Na‘au",
     "slug": "e-reo-calculator-hawaiian",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,11 +15,12 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "1.0.2",
-      "supportsTablet": true
+      "buildNumber": "1.0.4",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nativereo.ereocalculatorhawaiian"
     },
     "android": {
-      "versionCode": "2",
+      "versionCode": "4",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -27,6 +28,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cca2b11b-fd4c-4115-9ad3-862345e313e6"
+      }
     }
   }
 }

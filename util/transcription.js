@@ -35,15 +35,21 @@ const numberToWords = (number, prefixAllowed) =>  {
         let tens = parseFloat(decomposedNumber[2]);
         let ones = parseFloat(decomposedNumber[3]);
 
-        let tensAndUnitsString = " " + numbersDict[tens.toString() + ones.toString()];
+        let tensAndUnitsString = ""
+        if (tens===0 && ones===0) {
+            tensAndUnitsString = "";
+        }
+        else {
+            tensAndUnitsString = " " + numbersDict[tens.toString() + ones.toString()];
+        }
 
         let hundredsString = "";
         if (hundreds !== 0) {
-            if (hundreds === 1) {
+            if (thousands === 0 && hundreds === 1) {
                 hundredsString += " " + numbersDict["single_hundred"] + " " + numbersDict["100"];
             }
-            if (hundreds>1) {
-                hundredsString += " " + numbersDict["0" + hundreds.toString()] + " " + number["100"];
+            else {
+                hundredsString += " " + numbersDict["0" + hundreds.toString()] + " " + numbersDict["100"];
             }
             if (tens === 0 && ones !== 0) {
                     hundredsString += " " + numbersDict["connector"];
@@ -77,27 +83,27 @@ const numberToWords = (number, prefixAllowed) =>  {
 
 export const floatNumberToWords = (number) => {
 
-    console.log("floatNumberToWords <==",number)
-    const roundedNumber = parseFloat(parseFloat(number).toFixed(2));
-    const intPart = Math.trunc(roundedNumber);
-    const decimalPart = Math.round((roundedNumber - Math.trunc(roundedNumber))*100);
-    console.log("float number to word intPart: ", + intPart + ", decimalPart: " +  decimalPart);
-
     let outString = "";
 
-    outString += numberToWords(intPart.toString(), true);
+    if (number < 10000) {
+        console.log("floatNumberToWords <==", number)
+        const roundedNumber = parseFloat(parseFloat(number).toFixed(2));
+        const intPart = Math.trunc(roundedNumber);
+        const decimalPart = Math.round((roundedNumber - Math.trunc(roundedNumber)) * 100);
+        console.log("float number to word intPart: ", +intPart + ", decimalPart: " + decimalPart);
 
-    if (decimalPart !== 0) {
-        outString += " " + numbersDict["point"] + " ";
-        let decimal_string = decimalPart.toString()
-        if (decimal_string.length=== 1) { //no tenth, add "0" in front
-            outString += numbersDict["0"] + " " + numberToWords(decimal_string, false)
-        }
-        else if (decimal_string.length === 2 && decimal_string[1] === "0") { //round number of tenth, remove following 0
-            outString += numberToWords(decimal_string[0], false)
-        }
-        else {
-            outString += numberToWords(decimal_string);
+        outString += numberToWords(intPart.toString(), true);
+
+        if (decimalPart !== 0) {
+            outString += " " + numbersDict["point"] + " ";
+            let decimal_string = decimalPart.toString()
+            if (decimal_string.length === 1) { //no tenth, add "0" in front
+                outString += numbersDict["0"] + " " + numberToWords(decimal_string, false)
+            } else if (decimal_string.length === 2 && decimal_string[1] === "0") { //round number of tenth, remove following 0
+                outString += numberToWords(decimal_string[0], false)
+            } else {
+                outString += numberToWords(decimal_string);
+            }
         }
     }
     return outString.toLowerCase()

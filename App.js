@@ -4,9 +4,11 @@ import Button from "./components/Button";
 import Row from "./components/Row";
 import {floatNumberToAudio, floatNumberToWords, numberToAudio, numberToWords} from "./util/transcription";
 import { useSound } from "./hooks/useSound";
+import {ImageBackground} from "react-native-web";
 
 const soundOn = require("./assets/soundOn.png");
 const soundOff = require("./assets/soundOff.png");
+const kaunalewa = require("./assets/kaunalewa_logo.png");
 
 const windowWidth = Dimensions.get("screen").width;
 const MAX_OPERATION_WIDTH = 40;
@@ -303,12 +305,7 @@ export default function App() {
 
             <View style={_containers.config}>
               <View style={_containers.configButtons}>
-                <TouchableOpacity
-                style={styles.small_button}
-                onPress={() => setIsAudio(!isAudio)}>
-                  {isAudio ? <Image source={soundOn} style={styles.buttonIcon} />
-                      : <Image source={soundOff} style={styles.buttonIcon}/>}
-                </TouchableOpacity>
+                <Image source={kaunalewa} style={{height:50, resizeMode:"contain"}}/>
               </View>
             </View>
           </SafeAreaView>
@@ -319,7 +316,7 @@ export default function App() {
 const _containers = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: "#798c67",
+    backgroundColor: "#47523D",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     paddingHorizontal: 4,
   },
