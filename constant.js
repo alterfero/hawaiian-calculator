@@ -105,5 +105,18 @@ export const audioFiles = {
   "98": require("./language/audio/98.wav"),
   "99": require("./language/audio/99.wav"),
   "100": require("./language/audio/100.wav"),
-  "1000": require("./language/audio/1000.wav")
+  "101": require("./language/audio/101.wav"),
+  "102": require("./language/audio/102.wav"),
+  "103": require("./language/audio/103.wav"),
+  "104": require("./language/audio/104.wav"),
+  "105": require("./language/audio/105.wav"),
+  "106": require("./language/audio/106.wav"),
+  "107": require("./language/audio/107.wav"),
+  "108": require("./language/audio/108.wav"),
+  "109": require("./language/audio/109.wav"),
+  "110": require("./language/audio/110.wav"),
+  "111": require("./language/audio/111.wav"),
+  "1000": require("./language/audio/1000.wav"),
+  "thousand": require("./language/audio/thousand.wav"),
+  "hundred": require("./language/audio/hundred.wav")
 };

@@ -11,11 +11,11 @@
   "dependencies": {
     "expo": "latest",
     "expo-asset": "latest",
-    "expo-av": "latest",
+    "expo-av": "~13.2.1",
     "expo-status-bar": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-native": "0.71.8",
+    "react-native": "0.71.14",
     "react-native-web": "~0.18.10"
   },
   "devDependencies": {

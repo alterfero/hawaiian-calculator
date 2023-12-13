@@ -203,6 +203,16 @@ export default function App() {
  return (
           <SafeAreaView style={_containers.main}>
             <View ref={viewRef} style={[_containers.words, numberWritten ? _containers.wordsActive : null]}>
+              <View>
+                <View>
+                  <TouchableOpacity
+                      style={styles.small_button}
+                      onPress={() => setIsAudio(!isAudio)}>
+                    {isAudio ? <Image source={soundOn} style={styles.buttonIcon} />
+                        : <Image source={soundOff} style={styles.buttonIcon}/>}
+                  </TouchableOpacity>
+                </View>
+              </View>
               <ScrollView>
                 <Text style={[styles.text, {fontSize}]}>{fontSize && numberWritten}</Text>
 
@@ -385,8 +395,8 @@ const _containers = StyleSheet.create({
       marginBottom: 10,
     },
     small_button : {
-      width: 96,
-      height: 42,
+      width: 48,
+      height: 24,
       borderRadius: 20,
       backgroundColor:"#2f4550",
       borderWidth: 1,
@@ -399,8 +409,8 @@ const _containers = StyleSheet.create({
       flexDirection: "row",
     },
     buttonIcon : {
-      width: 24,
-      height: 24
+      width: 16,
+      height: 16
     }
   });
 
