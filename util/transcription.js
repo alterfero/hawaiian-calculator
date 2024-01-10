@@ -45,8 +45,8 @@ const numberToWords = (number, prefixAllowed) =>  {
 
         let hundredsString = "";
         if (hundreds !== 0) {
-            if (thousands === 0 && hundreds === 1) {
-                hundredsString += " " + numbersDict["hundred"];
+            if (hundreds === 1) {
+                hundredsString += " " + numbersDict["single_hundred"] + " " + numbersDict["hundred"];
             }
             else {
                 hundredsString += " " + numbersDict["0" + hundreds.toString()] + " " + numbersDict["hundred"];
@@ -144,7 +144,8 @@ const numberToAudio = (number,prefixAllowed) => {
 
         if (thousands !== 0) {
             if (thousands == 1) {
-                audioList.push("1000")
+                audioList.push("single_hundred")
+                audioList.push("thousand")
             }
             else {
                 audioList.push("0" + thousands.toString());
@@ -159,6 +160,7 @@ const numberToAudio = (number,prefixAllowed) => {
                 audioList.push("hundred")
             }
             else {
+                audioList.push(("single_hundred"))
                 audioList.push("hundred")
             }
         }

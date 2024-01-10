@@ -118,5 +118,7 @@ export const audioFiles = {
   "111": require("./language/audio/111.wav"),
   "1000": require("./language/audio/1000.wav"),
   "thousand": require("./language/audio/thousand.wav"),
-  "hundred": require("./language/audio/hundred.wav")
+  "hundred": require("./language/audio/hundred.wav"),
+  "single_hundred": require("./language/audio/single_hundred.wav")
+
 };
